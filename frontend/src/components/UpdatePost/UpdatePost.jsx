@@ -28,7 +28,7 @@ const UpdatePost = () => {
 
 
   useEffect(()=>{
-    axios.get(`http://localhost:8000/api/getone/${id}`)
+    axios.get(`https://tanushri1506-kindconnect.onrender.com/api/getone/${id}`)
     .then((response)=>{
         setPost(response.data);
     })
@@ -45,7 +45,7 @@ const UpdatePost = () => {
       return;
     }
 
-    await axios.put(`http://localhost:8000/api/update/${id}`,post)
+    await axios.put(`https://tanushri1506-kindconnect.onrender.com/api/update/${id}`,post)
     .then((response)=>{
         toast.success(response.data.msg,{position:"top-right"});
         navigate("/profile");
