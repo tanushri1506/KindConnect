@@ -11,7 +11,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:8000/api/getall");
+      const response = await axios.get("https://tanushri1506-kindconnect.onrender.com/api/getall");
       const sortedPosts = response.data.sort(
         (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
       );
