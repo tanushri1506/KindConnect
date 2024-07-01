@@ -8,7 +8,7 @@ const Posts = () => {
   const [posts,setPosts]= useState([]);
   useEffect(()=>{
     const fetchData = async()=>{
-      const response = await axios.get("http://localhost:8000/api/getall")
+      const response = await axios.get("https://tanushri1506-kindconnect.onrender.com/api/getall")
       setPosts(response.data);
     }
 
@@ -16,7 +16,7 @@ const Posts = () => {
 },[])
 
 const deletePost=async (postId) =>{
-  await axios.delete(`http://localhost:8000/api/delete/${postId}`)
+  await axios.delete(`https://tanushri1506-kindconnect.onrender.com/api/delete/${postId}`)
   .then((response)=>{
     setPosts((prevPost)=>prevPost.filter((post)=>post._id !== postId))
     
