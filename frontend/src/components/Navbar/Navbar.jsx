@@ -15,7 +15,7 @@ const Navbar = () => {
 					navigate('/login');
 					return;
 				}
-				const response = await axios.get('http://localhost:8000/api/userInfo/getUserInfo', {
+				const response = await axios.get('https://tanushri1506-kindconnect.onrender.com/api/userInfo/getUserInfo', {
 					headers: {
 						Authorization: `Bearer ${token}`
 					}
