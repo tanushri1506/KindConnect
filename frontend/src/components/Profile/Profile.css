@@ -1,0 +1,63 @@
+.post-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .post-item h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .post-item p {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  
+  .post-item .post-actions {
+    margin-top: 10px;
+  }
+  
+  .post-item .delete-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .post-item .delete-btn:hover {
+    background-color: #d32f2f;
+  }
+  
+  .post-item .edit-link {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid white;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: rgb(166, 77, 205);
+    margin-right: 10px;
+  }
+  
+  .post-item .edit-link:hover {
+    background-color: rgb(128, 39, 167);
+  }
+  
+  .first-line{
+    display: flex;
+    justify-content: space-between;
+  }
+  .last-line{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .yourPosts{
+    margin-bottom: 10px;
+    margin-left: 15px;
+  }

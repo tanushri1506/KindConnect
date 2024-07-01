@@ -1,0 +1,43 @@
+*{
+    margin:0
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    /* background-color: rgb(128, 39, 167); */
+    color: rgb(128, 39, 167);
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "Dosis", sans-serif;
+  }
+  
+  .navButtons a {
+    text-decoration: none;
+  }
+  
+  .nameBtn {
+    background-color: rgb(166, 77, 205);
+    margin-right: 10px;
+  }
+  
+  .nameBtn:hover {
+    background-color: rgb(128, 39, 167);
+  }
+
+  .logout {
+    background-color: #ff4d4d;
+   
+  }
+  
+  .logout:hover {
+    background-color: #ff1a1a;
+  }
+
+  
+  

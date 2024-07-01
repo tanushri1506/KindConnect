@@ -1,0 +1,69 @@
+.login button {
+    background-color: rgb(166, 77, 205);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login button:hover {
+    background-color: rgb(128, 39, 167);
+}
+
+.loginTitle h2 {
+    text-align: center; /* uncommented for centering */
+    padding-bottom: 20px;
+    font-size: 24px;
+}
+
+.loginContainer {
+    text-align: center;
+    margin: 5% auto; /* Center container with auto margin */
+    border: 1px solid rgba(166, 77, 205);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px; /* Adjusted for better responsiveness */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.loginInputs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Replaces padding-bottom for each child */
+}
+
+.loginInput {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.newHere{
+    margin-top:50px;
+}
+
+@media (max-width: 600px) {
+    .loginContainer {
+        margin: 10% 5%;
+        padding: 10px;
+        max-width: 90%;
+    }
+    
+    .loginTitle h2 {
+        font-size: 20px;
+    }
+
+    .login button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .loginInput {
+        padding: 8px;
+        font-size: 14px;
+    }
+}

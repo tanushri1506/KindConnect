@@ -1,0 +1,86 @@
+.create button {
+    background-color: rgb(166, 77, 205);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.create button:hover {
+    background-color: rgb(128, 39, 167);
+}
+
+.addContainer {
+    text-align: center;
+    margin: 5% auto; /* Center container with auto margin */
+    border: 1px solid rgba(166, 77, 205);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px; /* Adjusted for better responsiveness */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.addInputs {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 20px; /* Replaces padding-bottom for each child */
+}
+
+.addInput {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 95%;
+    resize: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Style for the select element */
+.addInputs select {
+    padding: 0.5rem; /* Padding around the select */
+    font-size: 1rem; /* Font size */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 4px; /* Rounded corners */
+    width: 200px; /* Width of the select */
+  }
+  
+  /* Style for the options inside the select */
+  .addInputs select option {
+    font-size: 1rem; /* Font size of the options */
+    padding: 0.5rem; /* Padding around the options */
+    background-color: #fff; /* Background color of the options */
+  }
+
+  .addInput::placeholder{
+    font-style: italic;
+    font-size: 1rem;
+    color: #514c4c;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  
+
+@media (max-width: 600px) {
+    .addContainer {
+        margin: 10% 5%;
+        padding: 10px;
+        max-width: 90%;
+    }
+    
+
+    .create button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .addInput {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
