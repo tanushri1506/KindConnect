@@ -15,7 +15,7 @@ const Profile = () => {
       const token = localStorage.getItem("token");
       if (token) {
         const response = await axios.get(
-          "http://localhost:8000/api/userInfo/getUserInfo",
+          "https://tanushri1506-kindconnect.onrender.com/api/userInfo/getUserInfo",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -33,7 +33,7 @@ const Profile = () => {
     const fetchPosts = async () => {
       if (username) {
         const response = await axios.get(
-          `http://localhost:8000/api/userposts/${username}`
+          `https://tanushri1506-kindconnect.onrender.com/api/userposts/${username}`
         );
         setPosts(response.data);
       }
@@ -44,7 +44,7 @@ const Profile = () => {
 
   const deletePost = async (postId) => {
     await axios
-      .delete(`http://localhost:8000/api/delete/${postId}`)
+      .delete(`https://tanushri1506-kindconnect.onrender.com/api/delete/${postId}`)
       .then((response) => {
         setPosts((prevPost) => prevPost.filter((post) => post._id !== postId));
 
