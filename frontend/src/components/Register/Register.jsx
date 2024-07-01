@@ -20,7 +20,7 @@ const Register = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const url = "http://localhost:8000/api/users";
+			const url = "https://tanushri1506-kindconnect.onrender.com/api/users";
 			const { data: res } = await axios.post(url, data);
 			navigate("/login");
 			// console.log(res.message);
