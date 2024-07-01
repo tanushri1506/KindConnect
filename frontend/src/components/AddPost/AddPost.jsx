@@ -53,7 +53,7 @@ const AddPost = () => {
       return;
     }
 
-    await axios.post("http://localhost:8000/api/create",post)
+    await axios.post("https://tanushri1506-kindconnect.onrender.com/api/create",post)
     .then((response)=>{
         toast.success(response.data.msg,{position:"top-right"});
         navigate("/home");
