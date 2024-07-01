@@ -23,7 +23,7 @@ const AddPost = () => {
     const fetchUsername = async () => {
       const token = localStorage.getItem('token');
       if (token) {
-        const response = await axios.get('http://localhost:8000/api/userInfo/getUserInfo', {
+        const response = await axios.get('https://tanushri1506-kindconnect.onrender.com/api/userInfo/getUserInfo', {
           headers: {
             Authorization: `Bearer ${token}`
           }
