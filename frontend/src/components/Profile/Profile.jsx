@@ -5,10 +5,16 @@ import toast from "react-hot-toast";
 import "./Profile.css";
 import Navbar from "../Navbar/Navbar";
 import { format } from "date-fns";
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
+import RoomIcon from '@mui/icons-material/Room';
+import Loading from "../Loading";
 
 const Profile = () => {
   const [posts, setPosts] = useState([]);
   const [username, setUsername] = useState("");
+  const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {
     const fetchUsername = async () => {
@@ -25,8 +31,12 @@ const Profile = () => {
         setUsername(response.data.userName);
       }
     };
+    const timer = setTimeout(() => {
+      setLoading(false); // Set loading to false after the delay
+    }, 2000);
 
     fetchUsername();
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
@@ -59,6 +69,10 @@ const Profile = () => {
 
   return (
     <>
+    {loading ? (
+        <Loading/>
+      ) : (
+        <div>
       <Navbar />
       <div className="container">
         <div className="createPost">
@@ -95,7 +109,10 @@ const Profile = () => {
                 </p>
               </div>
               <h2>{post.title}</h2>
+              <div className="location">
+             <RoomIcon/>
               <p>{post.location}</p>
+              </div>
 
               <p>{post.description}</p>
               <div className="last-line">
@@ -105,19 +122,21 @@ const Profile = () => {
 
               <div className="post-actions">
                 <Link to={`/edit/` + post._id} className="edit-link">
-                  Edit
+                  <EditIcon/>
                 </Link>
                 <button
                   onClick={() => deletePost(post._id)}
                   className="btn delete-btn"
                 >
-                  Delete
+                  <DeleteIcon/>
                 </button>
               </div>
             </div>
           );
         })}
       </div>
+      </div>
+      )}
     </>
   );
 };

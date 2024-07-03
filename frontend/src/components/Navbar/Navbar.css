@@ -1,43 +1,72 @@
 *{
-    margin:0
+  margin:0
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    /* background-color: rgb(128, 39, 167); */
-    color: rgb(128, 39, 167);
-  }
-  
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    font-family: "Dosis", sans-serif;
-  }
-  
-  .navButtons a {
-    text-decoration: none;
-  }
-  
-  .nameBtn {
-    background-color: rgb(166, 77, 205);
-    margin-right: 10px;
-  }
-  
-  .nameBtn:hover {
-    background-color: rgb(128, 39, 167);
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  /* background-color: rgb(128, 39, 167); */
+  color: rgb(128, 39, 167);
+}
 
-  .logout {
-    background-color: #ff4d4d;
-   
-  }
-  
-  .logout:hover {
-    background-color: #ff1a1a;
-  }
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Dosis", sans-serif;
+}
 
-  
-  
+.navButtons a {
+  text-decoration: none;
+}
+
+.nameBtn {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-family: "Dosis", sans-serif;
+}
+
+.profile-icon,.profile-name{
+  padding-right: 1px;
+}
+
+.profile-name{
+  font-weight: 500;
+}
+.dropdown {
+  position: absolute;
+  top: 50px;
+  right: 40px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.dropdown-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.item1:hover {
+  background-color:  rgb(230, 226, 221);
+}
+.item2:hover {
+  background-color: #d32f2f;
+}
+
+.item1{
+  color: black;
+  background-color: #f0f0f0;
+}
+
+.item2{
+  background-color: #f44336;
+  color: #fff;
+
+}

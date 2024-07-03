@@ -4,10 +4,13 @@ import "./Home.css";
 import axios from "axios";
 import Navbar from "../Navbar/Navbar";
 import { format } from "date-fns";
+import RoomIcon from '@mui/icons-material/Room';
+import Loading from "../Loading";
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,8 +20,14 @@ const Home = () => {
       );
       setPosts(sortedPosts);
     };
+    const timer = setTimeout(() => {
+      setLoading(false); // Set loading to false after the delay
+    }, 2000);
+
 
     fetchData();
+    return () => clearTimeout(timer);
+
   }, []);
 
   const handleSearch = (e) => {
@@ -34,6 +43,10 @@ const Home = () => {
 
   return (
     <>
+     {loading ? (
+        <Loading/>
+      ) : (
+        <div>
       <Navbar />
 
       <div className="container">
@@ -73,7 +86,11 @@ const Home = () => {
                 </p>
               </div>
               <h2>{post.title}</h2>
+              <div className="location">
+             <RoomIcon/>
               <p>{post.location}</p>
+              </div>
+            
 
               <p>{post.description}</p>
               <div className="last-line">
@@ -84,6 +101,8 @@ const Home = () => {
           );
         })}
       </div>
+      </div>
+      )}
     </>
   );
 };

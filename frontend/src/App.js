@@ -6,12 +6,14 @@ import AddPost from './components/AddPost/AddPost';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Profile from './components/Profile/Profile';
+import { ThemeProvider, createTheme } from '@mui/material/styles'; // Import from '@mui/material/styles'
 
 
 function App() {
   const user = localStorage.getItem("token");
-
+  const theme = createTheme();
   return (
+    <ThemeProvider theme={theme}>
     <Routes>
 			{user && <Route path="/" exact element={<Register/>} />}
 			<Route path="/home" exact element={<Home/>} />
@@ -22,6 +24,7 @@ function App() {
       <Route path='/edit/:id' element={<UpdatePost/>}/>
       <Route path='/profile' element={<Profile/>}/>
 		</Routes>
+    </ThemeProvider>
   );
 }
 
