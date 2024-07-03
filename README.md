@@ -19,3 +19,5 @@ KindConnect is a secure MERN web application designed to help users seek or offe
 - **Node.js:** A JavaScript runtime environment that executes server-side code.
 - **JWT (JSON Web Tokens):** A secure method for transmitting information between parties as a JSON object, used for authentication.
 - **Bcrypt:** A library for hashing passwords to enhance security and protect user credentials.
+
+#
