@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link,useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import axios from 'axios';
 import PersonIcon from '@mui/icons-material/Person';
@@ -11,6 +11,8 @@ const Navbar = () => {
 	const navigate = useNavigate();
 	const [dropdownOpen, setDropdownOpen] = useState(false);
 	const [isProfilePage, setIsProfilePage] = useState(false);
+
+	
   
 
 	const toggleDropdown = () => {
@@ -30,6 +32,7 @@ const Navbar = () => {
 	  };
 
 	useEffect(() => {
+		const API = process.env.REACT_APP_API_URL;
 		const fetchUsername = async () => {
 			try {
 				const token = localStorage.getItem('token');
@@ -37,7 +40,7 @@ const Navbar = () => {
 					navigate('/login');
 					return;
 				}
-				const response = await axios.get('https://tanushri1506-kindconnect.onrender.com/api/userInfo/getUserInfo', {
+				const response = await axios.get(`${API}/api/userInfo/getUserInfo`, {
 					headers: {
 						Authorization: `Bearer ${token}`
 					}

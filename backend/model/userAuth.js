@@ -21,7 +21,7 @@ const UserAuthentication = mongoose.model("userAuths", userAuthSchema);
 
 const validate = (data) => {
 	const schema = Joi.object({
-		userName: Joi.string().required().label("User Name"),
+		// userName: Joi.string().required().label("User Name"),
 		email: Joi.string().email().required().label("Email"),
 		password: passwordComplexity().required().label("Password"),
 	});

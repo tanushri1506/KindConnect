@@ -12,9 +12,11 @@ const Home = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(true);
 
+
   useEffect(() => {
+    const API = process.env.REACT_APP_API_URL;
     const fetchData = async () => {
-      const response = await axios.get("https://tanushri1506-kindconnect.onrender.com/api/getall");
+      const response = await axios.get(`${API}/api/getall`);
       const sortedPosts = response.data.sort(
         (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
       );

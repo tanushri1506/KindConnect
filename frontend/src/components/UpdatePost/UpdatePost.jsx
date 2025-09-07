@@ -13,6 +13,7 @@ const UpdatePost = () => {
     helpType: "",
   };
 
+
   const { id } = useParams();
   const [post, setPost] = useState(posts);
   const navigate = useNavigate();
@@ -26,8 +27,9 @@ const UpdatePost = () => {
   };
 
   useEffect(() => {
+    const API = process.env.REACT_APP_API_URL;
     axios
-      .get(`https://tanushri1506-kindconnect.onrender.com/api/getone/${id}`)
+      .get(`${API}/api/getone/${id}`)
       .then((response) => {
         setPost(response.data);
       })
@@ -37,6 +39,7 @@ const UpdatePost = () => {
   }, [id]);
 
   const submitForm = async (e) => {
+    const API = process.env.REACT_APP_API_URL;
     e.preventDefault();
 
     if (!post.title || !post.description || !post.contact || !post.location) {
@@ -46,7 +49,7 @@ const UpdatePost = () => {
 
     await axios
       .put(
-        `https://tanushri1506-kindconnect.onrender.com/api/update/${id}`,
+        `${API}/api/update/${id}`,
         post
       )
       .then((response) => {

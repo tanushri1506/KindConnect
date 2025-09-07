@@ -12,10 +12,12 @@ const Login = () => {
 		setData({ ...data, [input.name]: input.value });
 	};
 
+	const API = process.env.REACT_APP_API_URL;
+
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const url = "https://tanushri1506-kindconnect.onrender.com/api/auth";
+			const url = `${API}/api/auth`;
 			const { data: res } = await axios.post(url, data);
 			localStorage.setItem("token", res.data);
 			window.location = "/home";

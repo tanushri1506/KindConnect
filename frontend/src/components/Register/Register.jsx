@@ -16,11 +16,13 @@ const Register = () => {
 	const handleChange = ({ currentTarget: input }) => {
 		setData({ ...data, [input.name]: input.value });
 	};
+	
+	const API = process.env.REACT_APP_API_URL;
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const url = "https://tanushri1506-kindconnect.onrender.com/api/users";
+			const url = `${API}/api/users`;
 			const { data: res } = await axios.post(url, data);
 			navigate("/login");
 			// console.log(res.message);

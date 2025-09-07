@@ -17,12 +17,15 @@ const AddPost = () => {
   const [post, setPost] = useState(posts);
   const navigate = useNavigate();
 
+  
+
   useEffect(() => {
+    const API = process.env.REACT_APP_API_URL;
     const fetchUsername = async () => {
       const token = localStorage.getItem("token");
       if (token) {
         const response = await axios.get(
-          "https://tanushri1506-kindconnect.onrender.com/api/userInfo/getUserInfo",
+          `${API}/api/userInfo/getUserInfo`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -49,6 +52,7 @@ const AddPost = () => {
   };
 
   const submitForm = async (e) => {
+    const API = process.env.REACT_APP_API_URL;
     e.preventDefault();
 
     if (!post.title || !post.description || !post.contact || !post.location) {
@@ -57,7 +61,7 @@ const AddPost = () => {
     }
 
     await axios
-      .post("https://tanushri1506-kindconnect.onrender.com/api/create", post)
+      .post(`${API}/api/create`, post)
       .then((response) => {
         toast.success(response.data.msg, { position: "top-right" });
         navigate("/home");

@@ -6,9 +6,12 @@ import toast from 'react-hot-toast';
 
 const Posts = () => {
   const [posts,setPosts]= useState([]);
+
+
   useEffect(()=>{
+    const API = process.env.REACT_APP_API_URL;
     const fetchData = async()=>{
-      const response = await axios.get("https://tanushri1506-kindconnect.onrender.com/api/getall")
+      const response = await axios.get(`${API}/api/getall`)
       setPosts(response.data);
     }
 
@@ -16,7 +19,8 @@ const Posts = () => {
 },[])
 
 const deletePost=async (postId) =>{
-  await axios.delete(`https://tanushri1506-kindconnect.onrender.com/api/delete/${postId}`)
+  const API = process.env.REACT_APP_API_URL;
+  await axios.delete(`${API}/api/delete/${postId}`)
   .then((response)=>{
     setPosts((prevPost)=>prevPost.filter((post)=>post._id !== postId))
     

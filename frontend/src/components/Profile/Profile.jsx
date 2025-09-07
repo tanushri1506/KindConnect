@@ -16,12 +16,14 @@ const Profile = () => {
   const [loading, setLoading] = useState(true);
 
 
+
   useEffect(() => {
+    const API = process.env.REACT_APP_API_URL;
     const fetchUsername = async () => {
       const token = localStorage.getItem("token");
       if (token) {
         const response = await axios.get(
-          "https://tanushri1506-kindconnect.onrender.com/api/userInfo/getUserInfo",
+          `${API}/api/userInfo/getUserInfo`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -40,10 +42,11 @@ const Profile = () => {
   }, []);
 
   useEffect(() => {
+    const API = process.env.REACT_APP_API_URL;
     const fetchPosts = async () => {
       if (username) {
         const response = await axios.get(
-          `https://tanushri1506-kindconnect.onrender.com/api/userposts/${username}`
+          `${API}/api/userposts/${username}`
         );
         setPosts(response.data);
       }
@@ -53,8 +56,9 @@ const Profile = () => {
   }, [username]);
 
   const deletePost = async (postId) => {
+    const API = process.env.REACT_APP_API_URL;
     await axios
-      .delete(`https://tanushri1506-kindconnect.onrender.com/api/delete/${postId}`)
+      .delete(`${API}/api/delete/${postId}`)
       .then((response) => {
         setPosts((prevPost) => prevPost.filter((post) => post._id !== postId));
 
