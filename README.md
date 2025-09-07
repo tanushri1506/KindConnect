@@ -1,6 +1,12 @@
 # KindConnect
 KindConnect is a secure MERN web application designed to help users seek or offer assistance within their community. By fostering strong bonds and promoting mutual support, KindConnect provides a user-friendly platform where individuals can post their skills or needs, connect with others, and make meaningful contributions. With robust authentication and secure login features, users can confidently engage with the platform, knowing their information is protected. KindConnect aims to create a collaborative environment, encouraging a culture of helping and being helped, ultimately strengthening community ties.
 
+## Screenshots
+![](images/kind1.png)           
+![](images/kind2.png)         
+![](images/kind3.png)           
+![](images/kind4.png)        
+
 ## Features
 
 - **User Authentication:** Secure user registration and login using JWT and Bcrypt.
